@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to Health Match</h1><br />
+
+    <p>
+        Have you ever thought there needs to be an easier way to find a health care clinic that will be a good fit for you?
+        Well, we have found that easier way.
+    </p><br />
+
+    <p>
+        Here at Health Match, we are committed to making the process of finding a clinic more efficient for, you, our user.
+        We want to provide you a match based on your location, and urgency.
+    </p><br />
+    <p>
+        We are currently building our efforts of what our users want to see. After you get your match, if you would like to
+        leave feedback about improving the match process, please <a href="mailto:us@wewanttoknow.com">email</a> us, we would 
+        greatly appreciate it.
+    </p><br />
+
+    <div class="button-group">
+        <input type="button" value="Begin" onclick="@("window.location.href='" + @Url.Action("CreateMatch", "User") + "'");" />
+    </div>
+
+</div>

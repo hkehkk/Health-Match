@@ -1,0 +1,46 @@
+﻿@model HealthMatch.Models.User
+
+@{
+    ViewData["Title"] = "CreateMatch";
+}
+
+
+<h1>
+    Welcome to HealthMatch. If you are looking to find a healthcare clinic in your area,
+    fill out the information below and the best match will be returned.
+</h1>
+
+<h4></h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateMatch">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Zipcode" class="control-label"></label>
+                <input asp-for="Zipcode" name="zipcodeInput" class="form-control" />
+                <span asp-validation-for="Zipcode" class="text-danger"></span>
+               
+            </div>
+            <div class="form-group">
+                <label asp-for="UrgencyNeed" class="control-label"></label>
+                <select asp-for="UrgencyNeed" name="urgentSelect" class="form-control" >
+                    <option></option>
+                    <option>Urgent</option>
+                    <option>Not Urgent</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@*<div>
+    <a asp-action="Index">Home</a>
+</div>*@
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,61 @@
+﻿@*@model IEnumerable<HealthMatch.Models.Clinic>*@
+
+@{
+    ViewData["Title"] = "ViewMatches";
+}
+
+<h1>Results:</h1>
+<br />
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <label>Clinic Name</label>
+            </th>
+            <th>
+                <label>Adress</label>
+            </th>
+            <th>
+                <label>City</label>
+            </th>
+            <th>
+                <label>State</label>
+            </th>
+            <th>
+                <label>Zipcode</label>
+            <th>
+                <label>Phone Number</label>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.Clinics)
+        {
+            <tr>
+                <td>
+                    @item.ClinicName
+                </td>
+                <td>
+                    @item.Address
+                </td>
+                <td>
+                    @item.City
+                </td>
+                <td>
+                    @item.State
+                </td>
+                <td>
+                    @item.Zipcode
+                </td>
+                <td>
+                    @item.Phone
+                </td>
+
+            </tr>
+        }
+
+    </tbody>
+</table>
